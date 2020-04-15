@@ -1,0 +1,7 @@
+Add observers on click
+Detect game over (no change during 'tick')
+Start/stop sim
+Save/Load board
+Edit board
+Board location on screen is configurable
+Controls for size, speed, etc.
