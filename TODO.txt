@@ -1,7 +1,3 @@
-Add observers on click
-Start/stop sim
 Save/Load board
-Edit board
-Board location on screen is configurable
 Controls for size, speed, etc.
 Add testing
