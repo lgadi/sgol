@@ -42,7 +42,7 @@ class GameScene: SKScene {
                 }
             }
         }
-        if cells[y*10+x].alive { count = count - 1 }
+        if cell.alive { count = count - 1 }
         return count
     }
     
@@ -101,33 +101,42 @@ class GameScene: SKScene {
         
     }
     
-    @objc func drawBoard(timer: Timer)  {
+    
+    fileprivate func drawAll() {
         for cell in cells {
+            cell.setLabel(text: String(getNeighborsCount(cell: cell)))
             cell.draw()
         }
+    }
+    
+    @objc func drawBoard(timer: Timer)  {
+        drawAll()
         if calculateScreen() {
             timer.invalidate()
+            button?.setText(text: "Start")
         }
+    }
+    
+    func updateRegion(x: Int, y: Int) {
+        drawAll()
     }
     
     func toggleTimer() {
         if timer.isValid {
             timer.invalidate()
-            print("to Start")
             button?.setText(text: "Start")
         
         }
         else {
+            button?.setText(text: "Stop")
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: drawBoard)
             timer.fire()
-            print("to Stop")
 
-            button?.setText(text: "Stop")
+            
         }
     }
     
     override func didMove(to view: SKView) {
-        print("didMove start")
         toggleTimer()
         
     }
@@ -146,8 +155,7 @@ class GameScene: SKScene {
     }
     
     override func didChangeSize(_ oldSize: CGSize) {
-        print(scene?.size ?? 0)
-        print(oldSize)
+       
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -156,8 +164,6 @@ class GameScene: SKScene {
         let convertedPoint =  scene?.convertPoint(fromView: CGPoint(x:x,y:y))
         let cx = convertedPoint?.x
         let cy = convertedPoint?.y
-        print("converted point: \(String(describing: cx)),\(String(describing: cy))")
-        print("x:\(x), y:\(y)")
         for  listener in mouseClickListeners {
             let rect = listener.getRect()
             if rect.contains(convertedPoint!) {

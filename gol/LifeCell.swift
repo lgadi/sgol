@@ -35,6 +35,7 @@ class LifeCell : Equatable, MouseClickProtocol {
         self.size = CGSize(width: WIDTH, height: HEIGHT)
         self.cellLabel = SKLabelNode()
         cellLabel.fontSize = 12
+        cellLabel.fontColor = SKColor.blue
         cellLabel.position = CGPoint(x:Int(origin.x)+WIDTH/2,y: Int(origin.y)+HEIGHT/2-5)
         scene.addChild(cellLabel)
         rect = SKShapeNode.init(rect: CGRect(
@@ -56,6 +57,7 @@ class LifeCell : Equatable, MouseClickProtocol {
     }
     
     func setLabel(text: String) {
+        cellLabel.fontColor = self.alive ? SKColor.blue:SKColor.white
         cellLabel.text = text
     }
     
@@ -66,6 +68,8 @@ class LifeCell : Equatable, MouseClickProtocol {
     func mouseClicked() {
         print("mouse clicked on LifeCell(\(x),\(y))")
         self.alive = !self.alive
+        setLabel(text:String(scene.getNeighborsCount(cell: self)))
         self.draw()
+        scene.updateRegion(x: self.x, y: self.y)
     }
 }

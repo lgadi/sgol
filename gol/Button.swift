@@ -13,7 +13,6 @@ import GameplayKit
 class Button : MouseClickProtocol {
     
     func mouseClicked() {
-        print("Mouse Clicked on button")
         scene.toggleTimer()
     }
     
