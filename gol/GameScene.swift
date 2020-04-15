@@ -14,7 +14,18 @@ class GameScene: SKScene {
     let MAX_X:Int = 10
     let MAX_Y:Int = 10
     
+    var timer: Timer = Timer()
     var cells = [LifeCell]()
+    var button: Button?
+    var mouseClickListeners = [MouseClickProtocol]()
+
+    func addMouseClickListener(listener:MouseClickProtocol) {
+        mouseClickListeners.append(listener)
+    }
+    
+    func removeMouseListener(listener:MouseClickProtocol) {
+        mouseClickListeners.removeAll{$0.getRect() == listener.getRect()}
+    }
     
     func getNeighborsCount(cell: LifeCell) -> Int {
         let x:Int = cell.x
@@ -26,7 +37,7 @@ class GameScene: SKScene {
         var count = 0
         for i in fromx ..< tox {
             for j in fromy ..< toy {
-                if cells[j*10+i].alive {
+                if cells[i*10+j].alive {
                     count += 1
                 }
             }
@@ -35,42 +46,44 @@ class GameScene: SKScene {
         return count
     }
     
-    func cloneCells() -> [LifeCell] {
-        var newCells = [LifeCell]()
-        for cell in cells {
-            newCells.append(LifeCell(x:cell.x, y: cell.y, scene:cell.scene, alive:cell.alive))
+    func shouldStop(cells:[LifeCell], statuses:[Bool]) -> Bool {
+        for i in 0..<cells.count {
+            if cells[i].alive != statuses[i] {return false}
         }
-        return newCells
+        return true
     }
     
-    
     func calculateScreen() -> Bool {
-        let newCells = cloneCells()
+        
+        var newStatus = [Bool](repeating: false, count:MAX_X*MAX_Y)
         for x in 0..<MAX_X {
             for y in 0..<MAX_Y {
-                let cellLocation = y*10+x
-                let neighborsCount = getNeighborsCount(cell:cells[cellLocation])
+                newStatus.append(false)
+                let cellLocation = y*MAX_Y+x
+                let cell = cells[cellLocation]
+                let neighborsCount = getNeighborsCount(cell:cell)
+                cell.setLabel(text: String(neighborsCount))
                 if neighborsCount < 2 || neighborsCount > 3 {
-                    newCells[cellLocation].alive = false
+                    newStatus[cellLocation] = false
                 }
                 if neighborsCount == 3 {
-                    newCells[cellLocation].alive = true
+                    newStatus[cellLocation] = true
                 }
             }
         }
-        let shouldStop = (cells == newCells)
-        cells = newCells
-        return shouldStop
+        
+        let shouldStopGame = shouldStop(cells:cells, statuses: newStatus)
+        for i in 0..<cells.count {
+            cells[i].alive = newStatus[i]
+        }
+        
+        return shouldStopGame
     }
     
     override func sceneDidLoad() {
         
-        let rect = SKShapeNode.init(rect: CGRect(
-            origin: CGPoint(x:300, y: 300),
-            size: CGSize(width: 100, height: 100)))
-        
-        rect.run(SKAction.fadeIn(withDuration: 0))
-        self.addChild(rect)
+        self.button = Button(scene:self, origin: CGPoint(x: 300, y: 300), size: CGSize(width: 200, height:100), text: "Start")
+        button?.draw()
         
         for x in 0..<10 {
             for y in 0..<10 {
@@ -85,6 +98,7 @@ class GameScene: SKScene {
         cells[5*10+7].alive = true
         cells[5*10+8].alive = true
         
+        
     }
     
     @objc func drawBoard(timer: Timer)  {
@@ -94,14 +108,28 @@ class GameScene: SKScene {
         if calculateScreen() {
             timer.invalidate()
         }
+    }
+    
+    func toggleTimer() {
+        if timer.isValid {
+            timer.invalidate()
+            print("to Start")
+            button?.setText(text: "Start")
         
+        }
+        else {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: drawBoard)
+            timer.fire()
+            print("to Stop")
+
+            button?.setText(text: "Stop")
+        }
     }
     
     override func didMove(to view: SKView) {
         print("didMove start")
+        toggleTimer()
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: drawBoard)
-        timer.fire()
     }
     
     
@@ -125,8 +153,17 @@ class GameScene: SKScene {
     override func mouseDown(with event: NSEvent) {
         let x = event.locationInWindow.x
         let y = event.locationInWindow.y
-        print("converted point: \(String(describing: scene?.convertPoint(fromView: CGPoint(x:x,y:y))))")
+        let convertedPoint =  scene?.convertPoint(fromView: CGPoint(x:x,y:y))
+        let cx = convertedPoint?.x
+        let cy = convertedPoint?.y
+        print("converted point: \(String(describing: cx)),\(String(describing: cy))")
         print("x:\(x), y:\(y)")
+        for  listener in mouseClickListeners {
+            let rect = listener.getRect()
+            if rect.contains(convertedPoint!) {
+                listener.mouseClicked()
+            }
+        }
     }
     
     override func mouseDragged(with event: NSEvent) {

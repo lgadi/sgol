@@ -18,6 +18,8 @@
 		0E7BF5032445EA3A00A2A89F /* golUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF5022445EA3A00A2A89F /* golUITests.swift */; };
 		0E7BF5112447087000A2A89F /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0E7BF5102447087000A2A89F /* TODO.txt */; };
 		0E7BF51324470D8F00A2A89F /* LifeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF51224470D8F00A2A89F /* LifeCell.swift */; };
+		0E7BF5152447367B00A2A89F /* MouseClickProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF5142447367B00A2A89F /* MouseClickProtocol.swift */; };
+		0E7BF51724473F3200A2A89F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF51624473F3200A2A89F /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		0E7BF5042445EA3A00A2A89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7BF5102447087000A2A89F /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		0E7BF51224470D8F00A2A89F /* LifeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCell.swift; sourceTree = "<group>"; };
+		0E7BF5142447367B00A2A89F /* MouseClickProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseClickProtocol.swift; sourceTree = "<group>"; };
+		0E7BF51624473F3200A2A89F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				0E7BF4ED2445EA3A00A2A89F /* Info.plist */,
 				0E7BF4EE2445EA3A00A2A89F /* gol.entitlements */,
 				0E7BF51224470D8F00A2A89F /* LifeCell.swift */,
+				0E7BF5142447367B00A2A89F /* MouseClickProtocol.swift */,
+				0E7BF51624473F3200A2A89F /* Button.swift */,
 			);
 			path = gol;
 			sourceTree = "<group>";
@@ -273,9 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E7BF4E72445EA3300A2A89F /* ViewController.swift in Sources */,
+				0E7BF51724473F3200A2A89F /* Button.swift in Sources */,
 				0E7BF51324470D8F00A2A89F /* LifeCell.swift in Sources */,
 				0E7BF4E52445EA3300A2A89F /* GameScene.swift in Sources */,
 				0E7BF4DF2445EA3300A2A89F /* AppDelegate.swift in Sources */,
+				0E7BF5152447367B00A2A89F /* MouseClickProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
