@@ -14,38 +14,6 @@ class GameScene: SKScene {
     let MAX_X:Int = 10
     let MAX_Y:Int = 10
     
-    class LifeCell {
-        let x : Int
-        let y : Int
-        let scene: SKScene
-        var alive: Bool
-        var oldRect: SKShapeNode?
-        init(x: Int, y: Int, scene: SKScene, alive: Bool) {
-            self.x = x
-            self.y = y
-            self.scene = scene
-            self.alive = alive
-            self.oldRect = nil
-        }
-        
-        
-        
-        func draw() {
-            if oldRect != nil {
-                oldRect!.removeFromParent()
-            }
-            let rect = SKShapeNode.init(rect: CGRect(
-                origin: CGPoint(x: self.x*10, y: self.y*10),
-                   size: CGSize(width: 10, height: 10)))
-            rect.fillColor = alive ? SKColor.white:SKColor.black
-            rect.run(SKAction.fadeIn(withDuration: 0))
-            self.oldRect = rect
-            scene.addChild(rect)
-        }
-        
-    }
-        
-    
     var cells = [LifeCell]()
     
     func getNeighborsCount(cell: LifeCell) -> Int {
@@ -59,7 +27,7 @@ class GameScene: SKScene {
         for i in fromx ..< tox {
             for j in fromy ..< toy {
                 if cells[j*10+i].alive {
-                   count += 1
+                    count += 1
                 }
             }
         }
@@ -75,13 +43,14 @@ class GameScene: SKScene {
         return newCells
     }
     
-    func calculateScreen() {
+    
+    func calculateScreen() -> Bool {
         let newCells = cloneCells()
         for x in 0..<MAX_X {
             for y in 0..<MAX_Y {
                 let cellLocation = y*10+x
                 let neighborsCount = getNeighborsCount(cell:cells[cellLocation])
-                if neighborsCount < 2 || neighborsCount > 3{
+                if neighborsCount < 2 || neighborsCount > 3 {
                     newCells[cellLocation].alive = false
                 }
                 if neighborsCount == 3 {
@@ -89,14 +58,16 @@ class GameScene: SKScene {
                 }
             }
         }
+        let shouldStop = (cells == newCells)
         cells = newCells
+        return shouldStop
     }
     
     override func sceneDidLoad() {
         
         let rect = SKShapeNode.init(rect: CGRect(
             origin: CGPoint(x:300, y: 300),
-               size: CGSize(width: 100, height: 100)))
+            size: CGSize(width: 100, height: 100)))
         
         rect.run(SKAction.fadeIn(withDuration: 0))
         self.addChild(rect)
@@ -113,14 +84,16 @@ class GameScene: SKScene {
         cells[9*10+9].alive = true
         cells[5*10+7].alive = true
         cells[5*10+8].alive = true
-
+        
     }
     
     @objc func drawBoard(timer: Timer)  {
         for cell in cells {
             cell.draw()
         }
-        calculateScreen()
+        if calculateScreen() {
+            timer.invalidate()
+        }
         
     }
     
@@ -141,7 +114,7 @@ class GameScene: SKScene {
     }
     
     func touchUp(atPoint pos : CGPoint) {
-       
+        
     }
     
     override func didChangeSize(_ oldSize: CGSize) {
