@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E7BF4DF2445EA3300A2A89F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF4DE2445EA3300A2A89F /* AppDelegate.swift */; };
+		0E7BF4E12445EA3300A2A89F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E7BF4E02445EA3300A2A89F /* GameScene.sks */; };
+		0E7BF4E32445EA3300A2A89F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E7BF4E22445EA3300A2A89F /* Actions.sks */; };
+		0E7BF4E52445EA3300A2A89F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF4E42445EA3300A2A89F /* GameScene.swift */; };
+		0E7BF4E72445EA3300A2A89F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF4E62445EA3300A2A89F /* ViewController.swift */; };
+		0E7BF4E92445EA3A00A2A89F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7BF4E82445EA3A00A2A89F /* Assets.xcassets */; };
+		0E7BF4EC2445EA3A00A2A89F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7BF4EA2445EA3A00A2A89F /* Main.storyboard */; };
+		0E7BF4F82445EA3A00A2A89F /* golTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF4F72445EA3A00A2A89F /* golTests.swift */; };
+		0E7BF5032445EA3A00A2A89F /* golUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BF5022445EA3A00A2A89F /* golUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E7BF4F42445EA3A00A2A89F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E7BF4D32445EA3200A2A89F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E7BF4DA2445EA3200A2A89F;
+			remoteInfo = gol;
+		};
+		0E7BF4FF2445EA3A00A2A89F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E7BF4D32445EA3200A2A89F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E7BF4DA2445EA3200A2A89F;
+			remoteInfo = gol;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E7BF4DB2445EA3200A2A89F /* gol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7BF4DE2445EA3300A2A89F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0E7BF4E02445EA3300A2A89F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		0E7BF4E22445EA3300A2A89F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		0E7BF4E42445EA3300A2A89F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		0E7BF4E62445EA3300A2A89F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E7BF4E82445EA3A00A2A89F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E7BF4EB2445EA3A00A2A89F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0E7BF4ED2445EA3A00A2A89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7BF4EE2445EA3A00A2A89F /* gol.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gol.entitlements; sourceTree = "<group>"; };
+		0E7BF4F32445EA3A00A2A89F /* golTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = golTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7BF4F72445EA3A00A2A89F /* golTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = golTests.swift; sourceTree = "<group>"; };
+		0E7BF4F92445EA3A00A2A89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7BF4FE2445EA3A00A2A89F /* golUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = golUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7BF5022445EA3A00A2A89F /* golUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = golUITests.swift; sourceTree = "<group>"; };
+		0E7BF5042445EA3A00A2A89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E7BF4D82445EA3200A2A89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7BF4F02445EA3A00A2A89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7BF4FB2445EA3A00A2A89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E7BF4D22445EA3200A2A89F = {
+			isa = PBXGroup;
+			children = (
+				0E7BF4DD2445EA3200A2A89F /* gol */,
+				0E7BF4F62445EA3A00A2A89F /* golTests */,
+				0E7BF5012445EA3A00A2A89F /* golUITests */,
+				0E7BF4DC2445EA3200A2A89F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0E7BF4DC2445EA3200A2A89F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF4DB2445EA3200A2A89F /* gol.app */,
+				0E7BF4F32445EA3A00A2A89F /* golTests.xctest */,
+				0E7BF4FE2445EA3A00A2A89F /* golUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E7BF4DD2445EA3200A2A89F /* gol */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF4DE2445EA3300A2A89F /* AppDelegate.swift */,
+				0E7BF4E02445EA3300A2A89F /* GameScene.sks */,
+				0E7BF4E22445EA3300A2A89F /* Actions.sks */,
+				0E7BF4E42445EA3300A2A89F /* GameScene.swift */,
+				0E7BF4E62445EA3300A2A89F /* ViewController.swift */,
+				0E7BF4E82445EA3A00A2A89F /* Assets.xcassets */,
+				0E7BF4EA2445EA3A00A2A89F /* Main.storyboard */,
+				0E7BF4ED2445EA3A00A2A89F /* Info.plist */,
+				0E7BF4EE2445EA3A00A2A89F /* gol.entitlements */,
+			);
+			path = gol;
+			sourceTree = "<group>";
+		};
+		0E7BF4F62445EA3A00A2A89F /* golTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF4F72445EA3A00A2A89F /* golTests.swift */,
+				0E7BF4F92445EA3A00A2A89F /* Info.plist */,
+			);
+			path = golTests;
+			sourceTree = "<group>";
+		};
+		0E7BF5012445EA3A00A2A89F /* golUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BF5022445EA3A00A2A89F /* golUITests.swift */,
+				0E7BF5042445EA3A00A2A89F /* Info.plist */,
+			);
+			path = golUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E7BF4DA2445EA3200A2A89F /* gol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7BF5072445EA3B00A2A89F /* Build configuration list for PBXNativeTarget "gol" */;
+			buildPhases = (
+				0E7BF4D72445EA3200A2A89F /* Sources */,
+				0E7BF4D82445EA3200A2A89F /* Frameworks */,
+				0E7BF4D92445EA3200A2A89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gol;
+			productName = gol;
+			productReference = 0E7BF4DB2445EA3200A2A89F /* gol.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0E7BF4F22445EA3A00A2A89F /* golTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7BF50A2445EA3B00A2A89F /* Build configuration list for PBXNativeTarget "golTests" */;
+			buildPhases = (
+				0E7BF4EF2445EA3A00A2A89F /* Sources */,
+				0E7BF4F02445EA3A00A2A89F /* Frameworks */,
+				0E7BF4F12445EA3A00A2A89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E7BF4F52445EA3A00A2A89F /* PBXTargetDependency */,
+			);
+			name = golTests;
+			productName = golTests;
+			productReference = 0E7BF4F32445EA3A00A2A89F /* golTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0E7BF4FD2445EA3A00A2A89F /* golUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7BF50D2445EA3B00A2A89F /* Build configuration list for PBXNativeTarget "golUITests" */;
+			buildPhases = (
+				0E7BF4FA2445EA3A00A2A89F /* Sources */,
+				0E7BF4FB2445EA3A00A2A89F /* Frameworks */,
+				0E7BF4FC2445EA3A00A2A89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E7BF5002445EA3A00A2A89F /* PBXTargetDependency */,
+			);
+			name = golUITests;
+			productName = golUITests;
+			productReference = 0E7BF4FE2445EA3A00A2A89F /* golUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E7BF4D32445EA3200A2A89F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Gadi Lifshitz";
+				TargetAttributes = {
+					0E7BF4DA2445EA3200A2A89F = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					0E7BF4F22445EA3A00A2A89F = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 0E7BF4DA2445EA3200A2A89F;
+					};
+					0E7BF4FD2445EA3A00A2A89F = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 0E7BF4DA2445EA3200A2A89F;
+					};
+				};
+			};
+			buildConfigurationList = 0E7BF4D62445EA3200A2A89F /* Build configuration list for PBXProject "gol" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E7BF4D22445EA3200A2A89F;
+			productRefGroup = 0E7BF4DC2445EA3200A2A89F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E7BF4DA2445EA3200A2A89F /* gol */,
+				0E7BF4F22445EA3A00A2A89F /* golTests */,
+				0E7BF4FD2445EA3A00A2A89F /* golUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E7BF4D92445EA3200A2A89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7BF4E12445EA3300A2A89F /* GameScene.sks in Resources */,
+				0E7BF4E92445EA3A00A2A89F /* Assets.xcassets in Resources */,
+				0E7BF4E32445EA3300A2A89F /* Actions.sks in Resources */,
+				0E7BF4EC2445EA3A00A2A89F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7BF4F12445EA3A00A2A89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7BF4FC2445EA3A00A2A89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E7BF4D72445EA3200A2A89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7BF4E72445EA3300A2A89F /* ViewController.swift in Sources */,
+				0E7BF4E52445EA3300A2A89F /* GameScene.swift in Sources */,
+				0E7BF4DF2445EA3300A2A89F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7BF4EF2445EA3A00A2A89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7BF4F82445EA3A00A2A89F /* golTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7BF4FA2445EA3A00A2A89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7BF5032445EA3A00A2A89F /* golUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E7BF4F52445EA3A00A2A89F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E7BF4DA2445EA3200A2A89F /* gol */;
+			targetProxy = 0E7BF4F42445EA3A00A2A89F /* PBXContainerItemProxy */;
+		};
+		0E7BF5002445EA3A00A2A89F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E7BF4DA2445EA3200A2A89F /* gol */;
+			targetProxy = 0E7BF4FF2445EA3A00A2A89F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0E7BF4EA2445EA3A00A2A89F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E7BF4EB2445EA3A00A2A89F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E7BF5052445EA3B00A2A89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0E7BF5062445EA3B00A2A89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0E7BF5082445EA3B00A2A89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gol/gol.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = gol/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gl.gol;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0E7BF5092445EA3B00A2A89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gol/gol.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = gol/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gl.gol;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		0E7BF50B2445EA3B00A2A89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = golTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = gl.golTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gol.app/Contents/MacOS/gol";
+			};
+			name = Debug;
+		};
+		0E7BF50C2445EA3B00A2A89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = golTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = gl.golTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gol.app/Contents/MacOS/gol";
+			};
+			name = Release;
+		};
+		0E7BF50E2445EA3B00A2A89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = golUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gl.golUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = gol;
+			};
+			name = Debug;
+		};
+		0E7BF50F2445EA3B00A2A89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = golUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gl.golUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = gol;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E7BF4D62445EA3200A2A89F /* Build configuration list for PBXProject "gol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7BF5052445EA3B00A2A89F /* Debug */,
+				0E7BF5062445EA3B00A2A89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E7BF5072445EA3B00A2A89F /* Build configuration list for PBXNativeTarget "gol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7BF5082445EA3B00A2A89F /* Debug */,
+				0E7BF5092445EA3B00A2A89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E7BF50A2445EA3B00A2A89F /* Build configuration list for PBXNativeTarget "golTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7BF50B2445EA3B00A2A89F /* Debug */,
+				0E7BF50C2445EA3B00A2A89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E7BF50D2445EA3B00A2A89F /* Build configuration list for PBXNativeTarget "golUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7BF50E2445EA3B00A2A89F /* Debug */,
+				0E7BF50F2445EA3B00A2A89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E7BF4D32445EA3200A2A89F /* Project object */;
+}
