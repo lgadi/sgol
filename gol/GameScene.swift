@@ -145,14 +145,14 @@ class GameScene: SKScene {
     }
     
     override func didChangeSize(_ oldSize: CGSize) {
-        print(scene?.size)
+        print(scene?.size ?? 0)
         print(oldSize)
     }
     
     override func mouseDown(with event: NSEvent) {
         let x = event.locationInWindow.x
         let y = event.locationInWindow.y
-        print("converted point: \(scene?.convertPoint(fromView: CGPoint(x:x,y:y)))")
+        print("converted point: \(String(describing: scene?.convertPoint(fromView: CGPoint(x:x,y:y))))")
         print("x:\(x), y:\(y)")
     }
     
