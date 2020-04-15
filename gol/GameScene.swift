@@ -37,7 +37,7 @@ class GameScene: SKScene {
         var count = 0
         for i in fromx ..< tox {
             for j in fromy ..< toy {
-                if cells[i*10+j].alive {
+                if cells[i*MAX_Y+j].alive {
                     count += 1
                 }
             }
@@ -59,9 +59,10 @@ class GameScene: SKScene {
         for x in 0..<MAX_X {
             for y in 0..<MAX_Y {
                 newStatus.append(false)
-                let cellLocation = y*MAX_Y+x
+                let cellLocation = x*MAX_X+y
                 let cell = cells[cellLocation]
                 let neighborsCount = getNeighborsCount(cell:cell)
+                newStatus[cellLocation] = cell.alive
                 cell.setLabel(text: String(neighborsCount))
                 if neighborsCount < 2 || neighborsCount > 3 {
                     newStatus[cellLocation] = false
@@ -85,8 +86,8 @@ class GameScene: SKScene {
         self.button = Button(scene:self, origin: CGPoint(x: 300, y: 300), size: CGSize(width: 200, height:100), text: "Start")
         button?.draw()
         
-        for x in 0..<10 {
-            for y in 0..<10 {
+        for x in 0..<MAX_X {
+            for y in 0..<MAX_Y {
                 cells.append(LifeCell(x:x, y:y, scene: self, alive: false))
             }
         }
