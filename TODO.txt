@@ -1,3 +1,5 @@
 Save/Load board
 Controls for size, speed, etc.
 Add testing
+Fix button behavior
+Move button to bottom (task bar like)

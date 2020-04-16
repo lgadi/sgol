@@ -68,7 +68,7 @@ class LifeCell : Equatable, MouseClickProtocol {
     func mouseClicked() {
         print("mouse clicked on LifeCell(\(x),\(y))")
         self.alive = !self.alive
-        setLabel(text:String(scene.getNeighborsCount(cell: self)))
+       // setLabel(text:String(board!.getNeighborsCount(cell: self)))
         self.draw()
         scene.updateRegion(x: self.x, y: self.y)
     }
