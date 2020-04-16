@@ -13,12 +13,14 @@ import SpriteKit
 class Board {
     var cells: [LifeCell]
     let scene: GameScene
-    let MAX_X:Int = 10
-    let MAX_Y:Int = 20
+    let MAX_X:Int = 30
+    let MAX_Y:Int = 30
+    var changedCells: [LifeCell]
     
     init(scene: GameScene) {
         self.scene = scene
         self.cells = [LifeCell]()
+        self.changedCells = [LifeCell]()
     }
     
     func getNeighborsCount(cell: LifeCell) -> Int {
@@ -48,7 +50,6 @@ class Board {
     }
     
     func calculateScreen() -> Bool {
-        
         var newStatus = [Bool](repeating: false, count:MAX_X*MAX_Y)
         for y in 0..<MAX_Y {
             for x in 0..<MAX_X {
@@ -63,6 +64,9 @@ class Board {
                 }
                 if neighborsCount == 3 {
                     newStatus[cellLocation] = true
+                }
+                if newStatus[cellLocation] != cell.alive {
+                    changedCells.append(cell)
                 }
             }
         }
@@ -85,10 +89,20 @@ class Board {
     }
     
     func drawAll() {
+        var updated = 0
         for cell in cells {
-            cell.setLabel(text: String(getNeighborsCount(cell: cell)))
-            cell.draw()
+            let count = String(getNeighborsCount(cell: cell))
+            if cell.cellLabel.text != count {
+                cell.setLabel(text: count)
+                updated += 1
+            }
         }
+        for cell in changedCells {
+            cell.draw()
+            updated += 1
+        }
+        changedCells.removeAll()
+        print("updated \(updated) cells overall")
     }
     
     @objc func drawBoard(timer: Timer)  {

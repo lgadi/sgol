@@ -58,9 +58,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         toggleTimer()
-        
     }
-    
     
     func touchDown(atPoint pos : CGPoint) {
         
