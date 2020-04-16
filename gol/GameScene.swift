@@ -10,6 +10,7 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, GameStateProtocol {
+    
     func stateChange(active: Bool) {
         startButton?.setText(text: active ? "Stop":"Start")
     }
@@ -61,11 +62,32 @@ class GameScene: SKScene, GameStateProtocol {
         }
     }
     
+    
     override func didMove(to view: SKView) {
         
         //todo create text view in a normal place and edit stuff...
        // let txt = NSTextField(frame: NSRect(x:10,y:10,width:100,height:50))
         //view.addSubview(txt)
+        
+        let textField = TextField(frame: NSRect(x: 100,y: 10, width: 100,height: 20))
+//        let handler : TextFieldListener = {
+//            class MyHandler : TextFieldListener {
+//                func textFieldChanged(newValue: String) {
+//                    print("handler new value is \(newValue)")
+//                }
+//            }
+//            return MyHandler()
+//        }()
+        textField.addTextChangedListener(listener:
+        {
+            class MyHandler : TextFieldListener {
+                func textFieldChanged(newValue: String) {
+                    print("handler2 new value is \(newValue)")
+                }
+            }
+            return MyHandler()
+        }())
+        view.addSubview(textField)
         toggleTimer()
     }
     
