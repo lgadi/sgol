@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class LifeCell : Equatable, MouseClickProtocol {
+class LifeCell : Equatable, MouseClickProtocol, Hashable {
     
     let BASEX = 100
     let BASEY = 100
@@ -62,14 +62,21 @@ class LifeCell : Equatable, MouseClickProtocol {
     }
     
     public static func ==(lhs: LifeCell, rhs: LifeCell) -> Bool {
+        lhs.x == rhs.x &&
+        lhs.y == rhs.y &&
         lhs.alive == rhs.alive
     }
     
     func mouseClicked() {
         print("mouse clicked on LifeCell(\(x),\(y))")
         self.alive = !self.alive
-       // setLabel(text:String(board!.getNeighborsCount(cell: self)))
         self.draw()
         scene.updateRegion(x: self.x, y: self.y)
     }
+    
+
+     func hash(into hasher: inout Hasher) {
+         hasher.combine(x)
+         hasher.combine(y)
+     }
 }

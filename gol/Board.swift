@@ -16,11 +16,13 @@ class Board {
     let MAX_X:Int = 30
     let MAX_Y:Int = 30
     var changedCells: [LifeCell]
+    var gameStateListeners: [GameStateProtocol]
     
     init(scene: GameScene) {
         self.scene = scene
         self.cells = [LifeCell]()
         self.changedCells = [LifeCell]()
+        self.gameStateListeners = [GameStateProtocol]()
     }
     
     func getNeighborsCount(cell: LifeCell) -> Int {
@@ -104,10 +106,17 @@ class Board {
         print("updated \(updated) cells overall")
     }
     
+    func addStateChangeListener(listener: GameStateProtocol) {
+        gameStateListeners.append(listener)
+    }
+    
     @objc func drawBoard(timer: Timer)  {
         drawAll()
         if calculateScreen() {
             timer.invalidate()
+            for listenere in gameStateListeners {
+                listenere.stateChange(active: false)
+            }
           //  button?.setText(text: "Start")
         }
     }
