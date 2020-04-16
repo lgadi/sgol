@@ -39,18 +39,16 @@ class LifeCell : Equatable, MouseClickProtocol, Hashable {
         cellLabel.position = CGPoint(x:Int(origin.x)+WIDTH/2,y: Int(origin.y)+HEIGHT/2-5)
         scene.addChild(cellLabel)
         rect = SKShapeNode.init(rect: CGRect(
-        origin: origin,
-           size: size))
+            origin: origin,
+            size: size))
         scene.addChild(rect)
         scene.addMouseClickListener(listener: self)
-
     }
-    
     
     func getRect() -> CGRect {
         return CGRect(origin:origin, size:size)
     }
-
+    
     func draw() {
         rect.fillColor = alive ? SKColor.white:SKColor.black
         rect.run(SKAction.fadeIn(withDuration: 0))
@@ -63,8 +61,13 @@ class LifeCell : Equatable, MouseClickProtocol, Hashable {
     
     public static func ==(lhs: LifeCell, rhs: LifeCell) -> Bool {
         lhs.x == rhs.x &&
-        lhs.y == rhs.y &&
-        lhs.alive == rhs.alive
+            lhs.y == rhs.y &&
+            lhs.alive == rhs.alive
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(x)
+        hasher.combine(y)
     }
     
     func mouseClicked() {
@@ -74,9 +77,6 @@ class LifeCell : Equatable, MouseClickProtocol, Hashable {
         scene.updateRegion(x: self.x, y: self.y)
     }
     
-
-     func hash(into hasher: inout Hasher) {
-         hasher.combine(x)
-         hasher.combine(y)
-     }
+    
+    
 }

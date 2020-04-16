@@ -62,6 +62,10 @@ class GameScene: SKScene, GameStateProtocol {
     }
     
     override func didMove(to view: SKView) {
+        
+        //todo create text view in a normal place and edit stuff...
+       // let txt = NSTextField(frame: NSRect(x:10,y:10,width:100,height:50))
+        //view.addSubview(txt)
         toggleTimer()
     }
     

@@ -1,4 +1,3 @@
 Save/Load board
 Controls for size, speed, etc.
 Add testing
-Fix button behavior
