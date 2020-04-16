@@ -31,7 +31,7 @@ class GameScene: SKScene {
     }
     
     override func sceneDidLoad() {
-        self.button = Button(scene:self, origin: CGPoint(x: 300, y: 300), size: CGSize(width: 200, height:100), text: "Start")
+        self.button = Button(scene:self, origin: CGPoint(x: 10, y: 10), size: CGSize(width: 100, height:50), text: "Start")
         button?.draw()
         board = Board(scene: self)
         board!.sceneDidLoad();

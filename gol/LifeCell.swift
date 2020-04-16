@@ -12,8 +12,8 @@ import GameplayKit
 
 class LifeCell : Equatable, MouseClickProtocol {
     
-    let BASEX = 30
-    let BASEY = 30
+    let BASEX = 100
+    let BASEY = 100
     let WIDTH = 20
     let HEIGHT = 20
     let x : Int

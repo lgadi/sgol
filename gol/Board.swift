@@ -53,7 +53,6 @@ class Board {
         var newStatus = [Bool](repeating: false, count:MAX_X*MAX_Y)
         for y in 0..<MAX_Y {
             for x in 0..<MAX_X {
-                newStatus.append(false)
                 let cellLocation = y*MAX_X+x
                 let cell = cells[cellLocation]
                 let neighborsCount = getNeighborsCount(cell:cell)
