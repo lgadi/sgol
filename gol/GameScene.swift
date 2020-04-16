@@ -69,7 +69,8 @@ class GameScene: SKScene, GameStateProtocol {
        // let txt = NSTextField(frame: NSRect(x:10,y:10,width:100,height:50))
         //view.addSubview(txt)
         
-        let textField = TextField(frame: NSRect(x: 100,y: 10, width: 100,height: 20))
+        let widthField = TextField(frame: NSRect(x: 100,y: 10, width: 100,height: 20))
+        let heightField = TextField(frame: NSRect(x: 220,y: 10, width: 100,height: 20))
 //        let handler : TextFieldListener = {
 //            class MyHandler : TextFieldListener {
 //                func textFieldChanged(newValue: String) {
@@ -78,16 +79,40 @@ class GameScene: SKScene, GameStateProtocol {
 //            }
 //            return MyHandler()
 //        }()
-        textField.addTextChangedListener(listener:
+        
+        class BaseHandler : TextFieldListener {
+            func textFieldChanged(newValue: String) {
+                print("should never be called")
+            }
+            
+            let game:GameScene
+            init(game:GameScene) {
+                self.game = game
+            }
+        }
+        widthField.addTextChangedListener(listener:
         {
-            class MyHandler : TextFieldListener {
-                func textFieldChanged(newValue: String) {
-                    print("handler2 new value is \(newValue)")
+            class MyHandler : BaseHandler {
+                override func textFieldChanged(newValue: String) {
+                    let height = Int(newValue)
+                    game.board!.setWidth(height ?? game.board!.getWidth())
                 }
             }
-            return MyHandler()
+            return MyHandler(game:self)
         }())
-        view.addSubview(textField)
+        
+        heightField.addTextChangedListener(listener:
+        {
+            class MyHandler : BaseHandler {
+                override func textFieldChanged(newValue: String) {
+                    let height = Int(newValue)
+                    game.board!.setHeight(height ?? game.board!.getHeight())
+                }
+            }
+            return MyHandler(game:self)
+        }())
+        view.addSubview(widthField)
+        view.addSubview(heightField)
         toggleTimer()
     }
     

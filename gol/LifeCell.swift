@@ -54,6 +54,12 @@ class LifeCell : Equatable, MouseClickProtocol, Hashable {
         rect.run(SKAction.fadeIn(withDuration: 0))
     }
     
+    func removeFromParent() {
+        cellLabel.removeFromParent()
+        rect.removeFromParent()
+        scene.removeMouseListener(listener: self)
+    }
+    
     func setLabel(text: String) {
         cellLabel.fontColor = self.alive ? SKColor.blue:SKColor.white
         cellLabel.text = text

@@ -13,8 +13,8 @@ import SpriteKit
 class Board {
     var cells: [LifeCell]
     let scene: GameScene
-    let MAX_X:Int = 30
-    let MAX_Y:Int = 30
+    var MAX_X:Int = 30
+    var MAX_Y:Int = 30
     var changedCells: [LifeCell]
     var gameStateListeners: [GameStateProtocol]
     
@@ -80,8 +80,8 @@ class Board {
         return shouldStopGame
     }
     
-    func sceneDidLoad() {
-        print("board initializing")
+    
+    fileprivate func createAllCells() {
         for y in 0..<MAX_Y {
             for x in 0..<MAX_X {
                 cells.append(LifeCell(x:x, y:y, scene: self.scene, alive: false))
@@ -89,6 +89,40 @@ class Board {
         }
     }
     
+    func sceneDidLoad() {
+        print("board initializing")
+        createAllCells()
+    }
+    func getWidth() -> Int {
+        return MAX_X
+    }
+    
+    func getHeight() -> Int {
+        return MAX_Y
+    }
+    
+    func setHeight(_ height:Int) {
+        self.MAX_Y = height
+        boardChanged()
+    }
+    
+    fileprivate func boardChanged() {
+        clearAll()
+        createAllCells()
+        drawAll()
+    }
+    
+    func setWidth(_ width:Int) {
+        print("width set to:\(width)")
+        self.MAX_X = width
+        boardChanged()
+    }
+    func clearAll() {
+        for cell in cells {
+            cell.removeFromParent()
+        }
+        cells.removeAll()
+    }
     func drawAll() {
         var updated = 0
         for cell in cells {
