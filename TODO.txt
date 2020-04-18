@@ -1,2 +1,5 @@
 Save/Load board
 Add testing
+Board border - calculate +-1 perimeter, then make sure the outer rim (+-2)'kills' cells
+optimize board calculation to only affected and potentially cells
+Measure calculation time and print stats
