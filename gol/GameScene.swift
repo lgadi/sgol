@@ -49,16 +49,18 @@ class GameScene: SKScene, GameStateProtocol {
     
     func toggleTimer() {
         if timer.isValid {
+            print("timer is no longer valid")
             timer.invalidate()
             stateChange(active: false)
-        
+            board?.drawAll()
         }
         else {
+            print("timer is valid")
             stateChange(active: true)
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: board!.drawBoard)
             timer.fire()
-
-            
+            print("Started timer")
+    
         }
     }
     

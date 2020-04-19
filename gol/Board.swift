@@ -26,22 +26,18 @@ class Board {
     }
     
     func getNeighborsCount(cell: LifeCell) -> Int {
-           let x:Int = cell.x
-           let y:Int = cell.y
-           let fromx:Int = x == 0 ? x : x - 1
-           let fromy:Int = y == 0 ? y : y - 1
-           let tox:Int = (x == MAX_X - 1) ? x + 1 : x + 2
-           let toy:Int = (y == MAX_Y - 1) ? y + 1 : y + 2
-           var count = 0
-           for i in fromy ..< toy {
-               for j in fromx ..< tox {
-                   if cells[i*MAX_X+j].alive {
-                       count += 1
-                   }
-               }
-           }
-           if cell.alive { count = count - 1 }
-           return count
+        var count = 0
+        for y in cell.y-1 ..< cell.y+2 {
+            if y<0 || y>=MAX_Y { continue }
+            for x in cell.x-1 ..< cell.x+2 {
+                if x<0 || x>=MAX_X { continue }
+                if x == cell.x && y == cell.y { continue }
+                if cells[y*MAX_X+x].alive  {
+                    count += 1
+                }
+            }
+        }
+        return count
     }
     
     func shouldStop(cells:[LifeCell], statuses:[Bool]) -> Bool {
@@ -106,7 +102,7 @@ class Board {
         boardChanged()
     }
     
-    fileprivate func boardChanged() {
+    func boardChanged() {
         clearAll()
         createAllCells()
         drawAll()
