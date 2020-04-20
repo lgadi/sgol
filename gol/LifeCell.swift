@@ -78,11 +78,11 @@ class LifeCell : Equatable, MouseClickProtocol, Hashable {
     
     func mouseClicked() {
         print("mouse clicked on LifeCell(\(x),\(y))")
+        scene.cellStateChanged(cell: self)
         self.alive = !self.alive
+        self.setLabel(text: "*")
         self.draw()
         scene.updateRegion(x: self.x, y: self.y)
     }
-    
-    
     
 }

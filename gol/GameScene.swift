@@ -35,6 +35,9 @@ class GameScene: SKScene, GameStateProtocol {
         mouseClickListeners.removeAll{$0.getRect() == listener.getRect()}
     }
     
+    func cellStateChanged(cell: LifeCell) {
+        print("cell \(cell.x),\(cell.y) changed state to \(cell.alive)")
+    }
     override func sceneDidLoad() {
         self.startButton = Button(scene:self, origin: CGPoint(x: 10, y: 10), size: CGSize(width: 100, height:50), text: "Start")
         startButton?.draw()

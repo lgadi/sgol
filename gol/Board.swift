@@ -25,19 +25,21 @@ class Board {
         self.gameStateListeners = [GameStateProtocol]()
     }
     
+    func getNeighbors(cell: LifeCell) -> [LifeCell] {
+        var neighbors = [LifeCell]()
+               for y in cell.y-1 ..< cell.y+2 {
+                   if y<0 || y>=MAX_Y { continue }
+                   for x in cell.x-1 ..< cell.x+2 {
+                       if x<0 || x>=MAX_X { continue }
+                    neighbors.append(cells[y*MAX_X+x])
+                   }
+               }
+               return neighbors
+    }
+    
     func getNeighborsCount(cell: LifeCell) -> Int {
-        var count = 0
-        for y in cell.y-1 ..< cell.y+2 {
-            if y<0 || y>=MAX_Y { continue }
-            for x in cell.x-1 ..< cell.x+2 {
-                if x<0 || x>=MAX_X { continue }
-                if x == cell.x && y == cell.y { continue }
-                if cells[y*MAX_X+x].alive  {
-                    count += 1
-                }
-            }
-        }
-        return count
+        let count = getNeighbors(cell: cell).reduce(0, {result, cell in result + (cell.alive == true ? 1 : 0)})
+        return cell.alive ? count - 1 : count
     }
     
     func shouldStop(cells:[LifeCell], statuses:[Bool]) -> Bool {
@@ -49,7 +51,7 @@ class Board {
     
     func calculateScreen() -> Bool {
         var newStatus = [Bool](repeating: false, count:MAX_X*MAX_Y)
-        for y in 0..<MAX_Y {
+        for y in 0..<MAX_Y { //this is not scalable... need to limit to potentially affected region
             for x in 0..<MAX_X {
                 let cellLocation = y*MAX_X+x
                 let cell = cells[cellLocation]
@@ -121,7 +123,7 @@ class Board {
     }
     func drawAll() {
         var updated = 0
-        for cell in cells {
+        for cell in cells { // this is not scalable. need to limit to potentially affected cells
             let count = String(getNeighborsCount(cell: cell))
             if cell.cellLabel.text != count {
                 cell.setLabel(text: count)
